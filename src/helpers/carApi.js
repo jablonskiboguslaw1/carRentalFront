@@ -7,6 +7,7 @@ api.get(carRentalApiUrl())
 export const create = params => 
 api.post(carRentalApiUrl(),{...params})
 
+export const get = (id) => api.get(carRentalApiUrl(id))
 
 export const destroy = (id) => api.destroy(carRentalApiUrl(id))
 

@@ -12,6 +12,8 @@ const apiCall = (url, method, body, resolve, reject) =>
         method: method,
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
+            ,
+            'Accept': 'application/json'
         },
         body: JSON.stringify(body)
     }).then(response => {
