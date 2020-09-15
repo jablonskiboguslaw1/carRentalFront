@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Car from '../components/Car'
 import styled from 'styled-components'
 import * as carApi from '../helpers/carApi'
+import {Link} from 'react-router-dom'
+import * as _ from 'ramda'
 
 
 const CarsContainer = styled.div`
@@ -44,47 +46,19 @@ class Cars extends Component {
       title:'Cars',
       data: []
     }
-//HARDCODED
-  createCar = async () => {
-    
 
-      await carApi.create({
-        "bodyType": "sedan",
-        "color": "silver",
-        "mark": "opel",
-        "mileage": 26000,
-        "model": "astra",
-        "payForDay": 30.0,
-        "productionYear": "2005"
-      })
+findById = (id,  arr) => {
+  const index = _.findIndex(_.propEq('id',id))(arr)
+  return {index, car: arr[index]}
+}
 
-    
-
-  }
-
-//HARDCODED
-  updateCar = async (id) => {
-    
-
-      await carApi.update(id,{
-    
-        "color": "gold",
-     
-        "mileage": 5000,
-      
-        "payForDay": 230.0,
-       
-      })
-
-    
-
-  }
-
-
-  
 
 deleteCar = async(id) => {
+  const {data} = this.state
   await carApi.destroy(id)
+const {index} = this.findById(id,data)
+this.setState({data: _.remove(index, 1, data)})
+
 }
 
   componentDidMount = async () => {
@@ -98,8 +72,8 @@ deleteCar = async(id) => {
         <Header >{this.state.title}</Header>
         <CarsContainer>
           {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar}  update= {this.updateCar}/>)}</CarsContainer>
-        
-        <Button onClick= {() =>{this.createCar(); window.location.reload(false)}}>Add</Button>
+        <Link to={`/cars/new`} >Add new car</Link>
+        <Button onClick= {() =>{this.createCar(); }}>Add</Button>
         
       </Container>
     )
