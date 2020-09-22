@@ -71,9 +71,8 @@ this.setState({data: _.remove(index, 1, data)})
       <Container>
         <Header >{this.state.title}</Header>
         <CarsContainer>
-          {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar}  update= {this.updateCar}/>)}</CarsContainer>
+    {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar}  update= {this.updateCar}/>)}</CarsContainer>
         <Link to={`/cars/new`} >Add new car</Link>
-        <Button onClick= {() =>{this.createCar(); }}>Add</Button>
         
       </Container>
     )
