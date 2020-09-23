@@ -7,6 +7,7 @@ import CarAddForm from './components/CarAddForm'
 import NotFound from './components/NotFound'
 import AuthService from './containers/security/login.service';
 import Home from './components/Home'
+import Login from './components/Login'
 
 
 
@@ -40,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className = "container mt-3">
           <Switch>
           <Route exact path='/home' component={Home} />
           <Route exact path='/login' component={Login} />

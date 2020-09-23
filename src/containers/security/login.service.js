@@ -30,4 +30,4 @@ class LoginService {
         return JSON.parse(localStorage.getItem('user'))
     }
 }
-export default new LoginService
+export default new LoginService()
