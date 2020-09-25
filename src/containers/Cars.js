@@ -68,7 +68,9 @@ this.setState({data: _.remove(index, 1, data)})
   }
   render() {
     return (
+      
       <Container>
+       
         <Header >{this.state.title}</Header>
         <CarsContainer>
     {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar}  update= {this.updateCar}/>)}</CarsContainer>
