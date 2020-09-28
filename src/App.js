@@ -6,12 +6,14 @@ import "./App.css";
 import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
-import Register from "./components/register.component";
+import ClientAddForm from "./components/ClientAddForm";
 import Home from "./components/Home";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import Cars from './containers/Cars'
+import CarAddForm from "./components/CarAddForm";
 
 class App extends Component {
   constructor(props) {
@@ -58,6 +60,8 @@ class App extends Component {
                 START
               </Link>
             </li>
+
+
 
             {showEmployeePanel && (
               <li className="nav-item">
@@ -118,7 +122,9 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/register" component={ClientAddForm} />
+            <Route exact path="/cars" component={Cars} />
+            <Route exact path="/newcar" component={CarAddForm} />
             <Route exact path="/profile" component={Profile} />
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />

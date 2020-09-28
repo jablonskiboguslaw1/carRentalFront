@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 
-export default class BoardAdmin extends Component {
+export default class ManagerPanel extends Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,7 @@ export default class BoardAdmin extends Component {
   }
 
   componentDidMount() {
-    UserService.getAdminBoard().then(
+    UserService.getManagerPanel().then(
       response => {
         this.setState({
           content: response.data
@@ -35,7 +35,7 @@ export default class BoardAdmin extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+          <h3>{this.state.content} nic</h3>
         </header>
       </div>
     );

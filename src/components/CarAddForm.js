@@ -40,7 +40,7 @@ class CarAddForm extends Component {
 
 
         return (
-            <DefaultForm> Edit Car
+            <DefaultForm> Add car to fleet
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='mark'>
                         <Form.Label>Mark: </Form.Label>
