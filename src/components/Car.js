@@ -9,6 +9,7 @@ background: #343744;
 border-radius: 10px;
 padding: 14px;
 margin-bottom: 7px;
+color: ivory;
 
 `
 export const ButtonD = styled.button`
