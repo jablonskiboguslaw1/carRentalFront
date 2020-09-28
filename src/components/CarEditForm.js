@@ -5,9 +5,6 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 
-
-
-
 export const DefaultForm = styled.div`
 margin: 0 auto;
 max-width: 320px;
@@ -24,6 +21,7 @@ class CarEditForm extends Component {
 
 
     carId = () => this.props.match.params.itemId
+    
     componentDidMount = async () => {
         const carItem = await get(this.carId())
         this.setState({ carItem, fetched: true })

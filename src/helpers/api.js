@@ -57,7 +57,8 @@ export const destroy = url =>
             fetch(url, {
                 method: 'DELETE',
                 headers: {
-                    'Content-Type': 'application/json; charset=utf-8'
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Authorization': ('Bearer ' + user.accessToken)
                 }
             }).then(response => {
                 if (response.ok) {
