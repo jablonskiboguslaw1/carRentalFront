@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Link, withRouter} from 'react-router-dom'
-import * as sdiv from '../components/styledDivs'
+import * as sdiv from '../styledDivs'
 
 
 

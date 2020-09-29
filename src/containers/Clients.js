@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Client from '../components/Client'
+import Client from '../components/entities/Client'
 import styled from 'styled-components'
 import * as clientApi from '../helpers/clientApi'
 import { Link } from 'react-router-dom'
@@ -76,7 +76,7 @@ class Clients extends Component {
         <Header >{this.state.title}</Header>
         <DefaultContainer>
           {this.state.data.map(client => <Client info={client} key={client.id} destroy={this.deleteClient} update={this.updateClient} />)}</DefaultContainer>
-       
+          <Link to={`/newclient`} >Register new</Link>
 
       </Container>
     )

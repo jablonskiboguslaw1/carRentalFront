@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Car from '../components/Car'
+import Car from '../components/entities/Car'
 import styled from 'styled-components'
 import * as carApi from '../helpers/carApi'
 import { Link } from 'react-router-dom'

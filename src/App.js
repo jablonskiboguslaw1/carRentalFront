@@ -3,20 +3,20 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AuthService from "./services/auth.service";
+import AuthService from "./services/authService";
 
-import Login from "./components/login.component";
-import ClientAddForm from "./components/ClientAddForm";
-import ClientEditForm from "./components/ClientEditForm";
+import Login from "./services/Login";
+import ClientAddForm from "./components/forms/ClientAddForm";
+import ClientEditForm from "./components/forms/ClientEditForm";
 import Home from "./components/Home";
-import Profile from "./components/profile.component";
-import BoardUser from "./components/board-user.component";
-import BoardModerator from "./components/board-moderator.component";
-import BoardAdmin from "./components/board-admin.component";
+import Profile from "./components/userInfo";
+import ClientPanel from "./components/panels/clientPanel";
+import EmployeePanel from "./components/panels/employeePanel";
+import ManagerPanel from "./components/panels/managerPanel";
 import Cars from './containers/Cars'
 import Clients from './containers/Clients'
-import CarAddForm from "./components/CarAddForm";
-import CarEditForm from "./components/CarEditForm";
+import CarAddForm from "./components/forms/CarAddForm";
+import CarEditForm from "./components/forms/CarEditForm";
 
 class App extends Component {
   constructor(props) {
@@ -132,9 +132,11 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path='/cars/:itemId' component={CarEditForm} />
             <Route exact path='/client/:itemId' component={ClientEditForm} />
-            <Route path="/user" component={BoardUser} />
-            <Route path="/mod" component={BoardModerator} />
-            <Route path="/admin" component={BoardAdmin} />
+            <Route exact path='/newclient' component={ClientAddForm} />
+
+            <Route path="/user" component={ClientPanel} />
+            <Route path="/mod" component={EmployeePanel} />
+            <Route path="/admin" component={ManagerPanel} />
           </Switch>
         </div>
       </div>

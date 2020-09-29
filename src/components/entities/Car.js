@@ -1,8 +1,8 @@
  
  import React, { Component } from 'react';
- import styled from 'styled-components';
+ 
  import {Link, withRouter} from 'react-router-dom'
- import * as sdiv from '../components/styledDivs'
+ import * as sdiv from '../styledDivs'
 
 
  class Car extends Component{
@@ -25,7 +25,7 @@
   <div>Milage: {mileage}</div>
   <div>Model: {model}</div>
   <div>Body Type: {bodyType}</div>
-  <div> Cost per day: {payForDay}</div>
+  <div>Cost per day: {payForDay}</div>
   <div>Production Year: {productionYear}</div>
   <div>Color: {color}</div>
   <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>

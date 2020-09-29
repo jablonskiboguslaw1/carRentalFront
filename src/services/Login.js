@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
-import AuthService from "../services/auth.service";
+import {  Link } from "react-router-dom";
+import AuthService from "./authService";
 
 const required = value => {
   if (!value) {
@@ -117,6 +117,7 @@ export default class Login extends Component {
                 onChange={this.onChangePassword}
                 validations={[required]}
               />
+              <div> You have no account? <Link to={"/register"} >Sign up!</Link></div>
             </div>
 
             <div className="form-group">

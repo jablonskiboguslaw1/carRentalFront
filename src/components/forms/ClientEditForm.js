@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { get, update } from '../helpers/clientApi'
+import { get, update } from '../../helpers/clientApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -25,28 +25,22 @@ export default class ClientEditForm extends Component {
     }
 
    
-    updateClient = async (name, surname, city, street, postCode) => {
+    updateClient = async (event) => {
 
 
         await update(this.clientId(), {
-            name: name,
-            surname: surname,
-            city: city,
-            street: street,
-            postCode: postCode
+            name: event.target.name.value,
+            surname: event.target.surname.value,
+            city: event.target.city.value,
+            street: event.target.street.value,
+            postCode: event.target.postCode.value
         })
 
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.updateClient(
-            event.target.name.value,
-            event.target.surname.value,
-            event.target.city.value,
-            event.target.street.value,
-            event.target.postCode.value
-        )
+        this.updateClient(event)
         this.props.history.push('/client')
     }
 
