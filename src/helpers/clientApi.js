@@ -12,4 +12,4 @@ export const get = (id) => api.get(clientApiUrl(id))
 export const destroy = (id) => api.destroy(clientApiUrl(id))
 
 export const update = (id, params) =>
-    api.put(clientApiUrl(id), { ...params })
+    api.patch(clientApiUrl(id), { ...params })

@@ -12,4 +12,4 @@ export const get = (id) => api.get(carRentalApiUrl(id))
 export const destroy = (id) => api.destroy(carRentalApiUrl(id))
 
 export const update = (id, params) =>
-    api.put(carRentalApiUrl(id), { ...params })
+    api.patch(carRentalApiUrl(id), { ...params })

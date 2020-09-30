@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { get, update } from '../../helpers/carApi'
+import { get, update } from '../helpers/carApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+
+
+
 
 
 export const DefaultForm = styled.div`
@@ -21,7 +24,6 @@ class CarEditForm extends Component {
 
 
     carId = () => this.props.match.params.itemId
-    
     componentDidMount = async () => {
         const carItem = await get(this.carId())
         this.setState({ carItem, fetched: true })
@@ -29,13 +31,13 @@ class CarEditForm extends Component {
     }
 
 
-updateCar = async (event) => {
+updateCar = async (color,payForDay,mileage) => {
 
 
     await update(this.carId(), {
-        color: event.target.color.value,
-        mileage: event.target.mileage.value,
-        payForDay: event.target.payForDay.value
+        color: color,
+        mileage: mileage,
+        payForDay: payForDay
     })
 
 }
@@ -43,7 +45,7 @@ updateCar = async (event) => {
 
 handleSubmit = (event) => {
     event.preventDefault();
-    this.updateCar(event)
+    this.updateCar(event.target.color.value,event.target.payForDay.value,event.target.mileage.value)
     this.props.history.push('/cars')
 
 }

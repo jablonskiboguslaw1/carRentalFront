@@ -1,38 +1,19 @@
 import React, { Component } from "react";
-import { Switch, Route, Link, Redirect } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import AuthService from "./services/authService";
-import Login from "./services/Login";
-import ClientAddForm from "./components/forms/ClientAddForm";
-import ClientEditForm from "./components/forms/ClientEditForm";
-import Home from "./components/Home";
-import Profile from "./components/userInfo";
-import ClientPanel from "./components/panels/clientPanel";
-import EmployeePanel from "./components/panels/employeePanel";
-import ManagerPanel from "./components/panels/managerPanel";
-import Cars from './containers/Cars'
-import Clients from './containers/Clients'
-import CarAddForm from "./components/forms/CarAddForm";
-import CarEditForm from "./components/forms/CarEditForm";
-import EmployeeAddForm from "./components/forms/EmployeeAddForm";
-import Employees from './containers/Employees'
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      AuthService.getCurrentUser() ? (
-        <Component {...props} />
-      ) : (
-          <Redirect to ={{
-            pathname: 'login',
-            state: { from: props.location }
-          }}
-          />
-        )
-    } />
-)
 
+import AuthService from "./services/auth.service";
+
+import Login from "./components/login.component";
+import ClientAddForm from "./components/ClientAddForm";
+import Home from "./components/Home";
+import Profile from "./components/profile.component";
+import BoardUser from "./components/board-user.component";
+import BoardModerator from "./components/board-moderator.component";
+import BoardAdmin from "./components/board-admin.component";
+import Cars from './containers/Cars'
+import CarAddForm from "./components/CarAddForm";
 
 class App extends Component {
   constructor(props) {
@@ -142,17 +123,12 @@ class App extends Component {
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={ClientAddForm} />
-            <PrivateRoute exact path="/cars" component={Cars} />
-            <PrivateRoute exact path="/clients" component={Clients} />
-            <PrivateRoute exact path="/newcar" component={CarAddForm} />
-            <PrivateRoute exact path="/profile" component={Profile} />
-            <PrivateRoute path='/cars/:itemId' component={CarEditForm} />
-            <PrivateRoute path='/client/:itemId' component={ClientEditForm} />
-            <PrivateRoute exact path="/newmember" component={EmployeeAddForm} />
-            <PrivateRoute exact path="/team" component={Employees}/>
-            <Route path="/user" component={ClientPanel} />
-            <Route path="/mod" component={EmployeePanel} />
-            <Route path="/admin" component={ManagerPanel} />
+            <Route exact path="/cars" component={Cars} />
+            <Route exact path="/newcar" component={CarAddForm} />
+            <Route exact path="/profile" component={Profile} />
+            <Route path="/user" component={BoardUser} />
+            <Route path="/mod" component={BoardModerator} />
+            <Route path="/admin" component={BoardAdmin} />
           </Switch>
         </div>
       </div>
