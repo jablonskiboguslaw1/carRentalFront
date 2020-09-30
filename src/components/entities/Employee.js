@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {Link, withRouter} from 'react-router-dom'
+import { withRouter} from 'react-router-dom'
 import * as sdiv from '../styledDivs'
 
 
@@ -35,7 +35,11 @@ class Employee extends Component{
  <div>Position: {position}</div>
  <div>Department: {department}</div>
  <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
- <Link to={`/employee/${id}`}>Edit</Link>
+ {id==this.props.userid ? 
+ <div></div>:
+ (position==="EMPLOYEE" ?
+ <sdiv.ButtonR onClick={this.update }>Grant Rights</sdiv.ButtonR> : <sdiv.ButtonR onClick={this.update }>Take the power</sdiv.ButtonR>) }
+
  </EmployeeContainer>)}}
 
 

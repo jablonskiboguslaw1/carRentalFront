@@ -24,7 +24,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       AuthService.getCurrentUser() ? (
         <Component {...props} />
       ) : (
-          <Redirect to ={{
+          <Redirect to={{
             pathname: 'login',
             state: { from: props.location }
           }}
@@ -149,7 +149,7 @@ class App extends Component {
             <PrivateRoute path='/cars/:itemId' component={CarEditForm} />
             <PrivateRoute path='/client/:itemId' component={ClientEditForm} />
             <PrivateRoute exact path="/newmember" component={EmployeeAddForm} />
-            <PrivateRoute exact path="/team" component={Employees}/>
+            <PrivateRoute exact path="/team" component={Employees} />
             <Route path="/user" component={ClientPanel} />
             <Route path="/mod" component={EmployeePanel} />
             <Route path="/admin" component={ManagerPanel} />
