@@ -1,4 +1,4 @@
-import authHeader from '../services/auth-header'
+import authHeader from '../services/authHeader'
 
 
 const user = JSON.parse(localStorage.getItem('user'));
@@ -46,8 +46,8 @@ export const post = (url, body) => new Promise(
 )
 
 
-export const patch = (url, body) => new Promise(
-    (resolve, reject) => apiCall(url, 'PATCH', body, resolve, reject)
+export const put = (url, body) => new Promise(
+    (resolve, reject) => apiCall(url, 'PUT', body, resolve, reject)
 )
 
 
@@ -57,7 +57,8 @@ export const destroy = url =>
             fetch(url, {
                 method: 'DELETE',
                 headers: {
-                    'Content-Type': 'application/json; charset=utf-8'
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Authorization': ('Bearer ' + user.accessToken)
                 }
             }).then(response => {
                 if (response.ok) {

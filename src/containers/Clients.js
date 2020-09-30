@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Car from '../components/entities/Car'
+import Client from '../components/entities/Client'
 import styled from 'styled-components'
-import * as carApi from '../helpers/carApi'
+import * as clientApi from '../helpers/clientApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
 
 
-const CarsContainer = styled.div`
+const DefaultContainer = styled.div`
 background: #2b2e39;
 margin: 0 auto;
 max-width: 600px;
@@ -41,30 +41,30 @@ text-align: center;
 color: ivory;
 `
 
-class Cars extends Component {
+class Clients extends Component {
 
   state =
     {
-      title: 'Cars',
+      title: 'Clients',
       data: []
     }
 
   findById = (id, arr) => {
     const index = _.findIndex(_.propEq('id', id))(arr)
-    return { index, car: arr[index] }
+    return { index, client: arr[index] }
   }
 
 
-  deleteCar = async (id) => {
+  deleteClient = async (id) => {
     const { data } = this.state
-    await carApi.destroy(id)
+    await clientApi.destroy(id)
     const { index } = this.findById(id, data)
     this.setState({ data: _.remove(index, 1, data) })
 
   }
 
   componentDidMount = async () => {
-    const data = await carApi.getAll()
+    const data = await clientApi.getAll()
     this.setState({ data })
 
   }
@@ -74,12 +74,12 @@ class Cars extends Component {
       <Container>
 
         <Header >{this.state.title}</Header>
-        <CarsContainer>
-          {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar} update={this.updateCar} />)}</CarsContainer>
-        <Link to={`/newcar`} >Add new car</Link>
+        <DefaultContainer>
+          {this.state.data.map(client => <Client info={client} key={client.id} destroy={this.deleteClient} update={this.updateClient} />)}</DefaultContainer>
+          <Link to={`/newclient`} >Register new</Link>
 
       </Container>
     )
   }
 }
-export default Cars
+export default Clients
