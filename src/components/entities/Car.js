@@ -20,7 +20,7 @@
   
   render(){
     const {mark,id,mileage,bodyType,model,payForDay,productionYear,color} = this.props.info
-      return(<sdiv.CarContainer>
+      return(<sdiv.Container>
   <div>Mark: {mark}</div>
   <div>Milage: {mileage}</div>
   <div>Model: {model}</div>
@@ -30,7 +30,7 @@
   <div>Color: {color}</div>
   <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
   <Link to={`/cars/${id}`}>edit</Link>
-  </sdiv.CarContainer>)}}
+  </sdiv.Container>)}}
 
 
 
