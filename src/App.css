@@ -1,10 +1,7 @@
 .App {
   text-align: center;
 }
-.doneTodo{
-  text-decoration: line-through;
-  color: chartreuse;
-}
+
 
 .App-logo {
   height: 40vmin;

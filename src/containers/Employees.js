@@ -4,20 +4,21 @@ import * as employeeApi from '../helpers/employeeApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
 import * as sdiv from '../components/styledDivs'
-
+import AuthService from "../services/authService";
 
 
 class Employees extends Component {
 
   state =
     {
+      currentUser: AuthService.getCurrentUser(),
       title: 'TEAM',
       data: []
     }
 
   findById = (id, arr) => {
     const index = _.findIndex(_.propEq('id', id))(arr)
-    return { index, client: arr[index] }
+    return { index, employee: arr[index] }
   }
 
 
@@ -29,8 +30,22 @@ class Employees extends Component {
 
   }
 
+
+  updateEmployee = async (id) => {
+    const { data } = this.state
+    await employeeApi.update(id)
+    const { index } = this.findById(id, data)
+    if(
+data[index].position=="MANAGER") {data[index].position="EMPLOYEE"}
+else if(
+  data[index].position=="EMPLOYEE") {data[index].position="MANAGER"}
+    this.setState({ data })
+
+  }
   componentDidMount = async () => {
+    
     const data = await employeeApi.getAll()
+  
     this.setState({ data })
   }
 
@@ -38,11 +53,11 @@ class Employees extends Component {
     return (
 
       <sdiv.Container>
-
+      
         <sdiv.Header >{this.state.title}</sdiv.Header>
         <sdiv.Container>
-          {this.state.data.map(employee => <Employee info={employee} key={employee.id} destroy={this.deleteEmployee} update={this.updateEmployee} />)}</sdiv.Container>
-          <Link to={`/newclient`} >Register new</Link>
+          {this.state.data.map(employee => <Employee userid={this.state.currentUser.id} info={employee} key={employee.id} destroy={this.deleteEmployee} update={this.updateEmployee} />)}</sdiv.Container>
+          <Link to={`/newmember`} >Register new</Link>
 
       </sdiv.Container>
     )
