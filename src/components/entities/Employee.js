@@ -30,13 +30,14 @@ class Employee extends Component{
      return(<EmployeeContainer>
  <div>First Name: {name}</div>
  <div>Last Name: {surname}</div>
- <div>Email: {email}</div>
+ <div><a className="mailto" href={"mailto:"+ email}>{email}</a></div>
  <div>id: {id}</div>
  <div>Position: {position}</div>
  <div>Department: {department}</div>
- <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
+ {id==this.props.userid ? <div> Hello!!</div>:
+ <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>}
  {id==this.props.userid ? 
- <div></div>:
+ <div>It's You!!</div>:
  (position==="EMPLOYEE" ?
  <sdiv.ButtonR onClick={this.update }>Grant Rights</sdiv.ButtonR> : <sdiv.ButtonR onClick={this.update }>Take the power</sdiv.ButtonR>) }
 

@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+
 import {Link, withRouter} from 'react-router-dom'
 import * as sdiv from '../styledDivs'
 
 
 
-const ClientContainer = styled.div`
-background: #343744;
-border-radius: 10px;
-padding: 14px;
-margin-bottom: 7px;
-`
 
 class Client extends Component{
 
   
- delete = () => {
+ block = () => {
    this.props.destroy(this.props.info.id)
    
  }
@@ -26,17 +20,19 @@ class Client extends Component{
  }
  
  render(){
-   const {id, name, surname, email, city, street, postCode} = this.props.info
-     return(<ClientContainer>
+   const {id, name, surname, email, city, street, postCode, isActive} = this.props.info
+     return(<sdiv.Container>
  <div>First Name: {name}</div>
  <div>Last Name: {surname}</div>
  <div>Email: {email}</div>
  <div>City: {city}</div>
  <div>Street: {street}</div>
  <div>Post Code: {postCode}</div>
- <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
+{isActive}
+ <sdiv.ButtonD onClick={this.block }>
+block this user </sdiv.ButtonD>
  <Link to={`/client/${id}`}>Edit</Link>
- </ClientContainer>)}}
+ </sdiv.Container>)}}
 
 
 

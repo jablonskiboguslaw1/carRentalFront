@@ -17,6 +17,7 @@ import CarAddForm from "./components/forms/CarAddForm";
 import CarEditForm from "./components/forms/CarEditForm";
 import EmployeeAddForm from "./components/forms/EmployeeAddForm";
 import Employees from './containers/Employees'
+import ReservationAddForm from "./components/forms/ReservationForm";
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -92,7 +93,7 @@ class App extends Component {
 
             {showManagerPanel && (
               <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
+                <Link to={"/manager"} className="nav-link">
                   Manager Panel
                 </Link>
               </li>
@@ -147,12 +148,14 @@ class App extends Component {
             <PrivateRoute exact path="/newcar" component={CarAddForm} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute path='/cars/:itemId' component={CarEditForm} />
-            <PrivateRoute path='/client/:itemId' component={ClientEditForm} />
+            <PrivateRoute path='/client/:itemId' component={ClientEditForm}  />
+            <PrivateRoute path='/reservation/:itemId' component={ReservationAddForm}/>
             <PrivateRoute exact path="/newmember" component={EmployeeAddForm} />
             <PrivateRoute exact path="/team" component={Employees} />
+            
             <Route path="/user" component={ClientPanel} />
             <Route path="/mod" component={EmployeePanel} />
-            <Route path="/admin" component={ManagerPanel} />
+            <Route path="/manager" component={ManagerPanel} />
           </Switch>
         </div>
       </div>

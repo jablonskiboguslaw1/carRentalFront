@@ -30,6 +30,7 @@
   <div>Color: {color}</div>
   <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
   <Link to={`/cars/${id}`}>edit</Link>
+  <Link to={`/reservation/${id}`}>Reservation</Link>
   </sdiv.Container>)}}
 
 

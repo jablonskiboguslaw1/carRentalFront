@@ -57,7 +57,7 @@ else if(
         <sdiv.Header >{this.state.title}</sdiv.Header>
         <sdiv.Container>
           {this.state.data.map(employee => <Employee userid={this.state.currentUser.id} info={employee} key={employee.id} destroy={this.deleteEmployee} update={this.updateEmployee} />)}</sdiv.Container>
-          <Link to={`/newclient`} >Register new</Link>
+          <Link to={`/newmember`} >Register new</Link>
 
       </sdiv.Container>
     )
