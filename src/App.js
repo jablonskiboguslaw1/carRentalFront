@@ -8,7 +8,7 @@ import ClientAddForm from "./components/forms/ClientAddForm";
 import ClientEditForm from "./components/forms/ClientEditForm";
 import Home from "./components/Home";
 import Profile from "./components/userInfo";
-import ClientPanel from "./components/panels/clientPanel";
+import ClientPanel from "./components/panels/ClientPanel";
 import EmployeePanel from "./components/panels/employeePanel";
 import ManagerPanel from "./components/panels/managerPanel";
 import Cars from './containers/Cars'
@@ -19,7 +19,8 @@ import EmployeeAddForm from "./components/forms/EmployeeAddForm";
 import Employees from './containers/Employees'
 import ReservationAddForm from "./components/forms/ReservationForm";
 import Reservations from './containers/Reservations'
-
+import Rentals from './containers/Rentals'
+import RentalForm from "./components/forms/RentalForm";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -157,6 +158,9 @@ class App extends Component {
             <PrivateRoute exact path='/reservation/:itemId' component={ReservationAddForm}/>
             <PrivateRoute exact path="/newmember" component={EmployeeAddForm} />
             <PrivateRoute exact path="/team" component={Employees} />
+            <PrivateRoute exact path="/rentals" component={Rentals} />
+            <PrivateRoute exact path='/rental/:itemId' component={RentalForm}/>
+            <PrivateRoute exact path='/rental/employee/:itemId' component={Rentals}/>
             <Route path="/user" component={ClientPanel} />
             <Route path="/mod" component={EmployeePanel} />
             <Route path="/manager" component={ManagerPanel} />

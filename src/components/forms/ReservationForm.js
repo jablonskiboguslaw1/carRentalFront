@@ -59,7 +59,7 @@ updateEnd =(event)=>{
     handleSubmit = (event) => {
         event.preventDefault();
         this.createReservation(event)
-        this.props.history.push(`/team`)
+        this.props.history.push(`client/`+ authService.getCurrentUser().id)
 
     }
    
@@ -83,7 +83,9 @@ updateEnd =(event)=>{
                             <Form.Control type="date"onChange={this.updateEnd} ></Form.Control>
                         </Form.Group>
                         {dateEnd>=dateStart ?
-                       <div> <Button type='submit'>Accept</Button>{Number.isNaN(this.calculateCost()) ? <div></div>:<div>Approximate cost: {this.calculateCost()}</div>}</div> : <div> Second date must be after first</div>}
+                       <div> <Button type='submit'>Accept</Button>
+                       {Number.isNaN(this.calculateCost()) ? 
+                       <div></div>:<div>Approximate cost: {this.calculateCost()}</div>}</div> : <div> Second date must be after first</div>}
                     </Form>
                 </DefaultForm>
             </div>

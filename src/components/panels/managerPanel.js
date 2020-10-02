@@ -93,10 +93,10 @@ export default class ManagerPanel extends Component {
                 <p className="card-text">Car Rental <br/>Let's the party started .</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
-                    <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
+                  <a  className="btn btn-sm btn-outline-secondary" href='/reservations' >Show reservation </a>
                     <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                   </div>
-                  <small className="text-muted">9 mins</small>
+                  
                 </div>
               </div>
             </div>

@@ -47,7 +47,7 @@ class Reservations extends Component {
 
         <sdiv.Header >{this.state.title}</sdiv.Header>
         <sdiv.Container>
-          { !this.state.data ? (
+          { this.state.data ? (
           this.state.data.map(
             reservation =>
               <sdiv.ContainerInside key={reservation.id} >

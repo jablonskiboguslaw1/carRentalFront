@@ -5,7 +5,7 @@ import * as sdiv from './styledDivs'
 
 
 
-class ClinetFromRes extends Component {
+class ClientFromRes extends Component {
 
 
 
@@ -26,4 +26,4 @@ render(){
 }
 
 
-export default ClinetFromRes
+export default ClientFromRes
