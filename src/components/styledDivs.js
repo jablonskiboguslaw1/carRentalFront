@@ -33,6 +33,15 @@ border-radius:14px;
 margin-top: 14px;
 color: ivory;
 `
+export const ContainerInside = styled.div`
+background: #1b1e29;
+margin: 0 auto;
+max-width: 600px;
+padding: 14px;
+border-radius:14px;
+margin-top: 14px;
+color: ivory;
+`
 export const Button = styled.button`
 color: #00a7fa;
 width: 80px;

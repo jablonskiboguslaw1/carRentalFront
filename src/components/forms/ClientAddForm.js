@@ -58,7 +58,7 @@ class ClientAddForm extends Component {
                     </Form.Group>
                     <Form.Group controlId='password'>
                         <Form.Label>Password: </Form.Label>
-                        <Form.Control></Form.Control>
+                        <Form.Control type='password'></Form.Control>
                     </Form.Group>
                     <Form.Group controlId='city'>
                         <Form.Label>City: </Form.Label>

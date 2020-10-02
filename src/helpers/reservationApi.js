@@ -4,6 +4,9 @@ import * as api from './api'
 export const getAll = () =>
     api.get(reservationApiUrl())
 
+    export const getAllByClient = (id) =>
+    api.get(reservationApiUrl()+'/client/'+id)
+
 export const create = params =>
     api.post(reservationApiUrl(), { ...params })
 

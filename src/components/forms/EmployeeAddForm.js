@@ -56,7 +56,7 @@ class EmployeeAddForm extends Component {
                     </Form.Group>
                     <Form.Group controlId='password'>
                         <Form.Label> Temporary Password: </Form.Label>
-                        <Form.Control></Form.Control>
+                        <Form.Control type='password'></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="position">
                         <Form.Label>Department</Form.Label>

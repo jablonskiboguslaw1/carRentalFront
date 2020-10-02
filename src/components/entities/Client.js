@@ -31,7 +31,8 @@ class Client extends Component{
 {isActive}
  <sdiv.ButtonD onClick={this.block }>
 block this user </sdiv.ButtonD>
- <Link to={`/client/${id}`}>Edit</Link>
+ <Link to={`/client/${id}`}>Edit</Link><br/>
+ <Link to={`reservation/client/${id}`}>Show reservations</Link>
  </sdiv.Container>)}}
 
 
