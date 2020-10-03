@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { create } from '../../helpers/rentalApi'
+import { create } from '../../helpers/carReturnApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -14,24 +14,25 @@ max-width: 320px;
 `
 
 
-class RentalForm extends Component {
+class ReturnForm extends Component {
 
     reservationId = () => this.props.match.params.itemId
     
 
-    createRental = async (event)=>
+    createReturn = async (event)=>
     {
         await create(this.reservationId(),{
             comments: event.target.comments.value,
-            employeeId: authService.getCurrentUser().id
+            employeeId: authService.getCurrentUser().id,
+            additionalPayments: event.target.additionalPayments.value
             
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.createRental(event)
-        this.props.history.push('/reservations')
+        this.createReturn(event)
+        this.props.history.push('/reservations/summary/'+this.reservationId())
     
     }
 
@@ -39,11 +40,15 @@ class RentalForm extends Component {
 
 
         return (
-            <DefaultForm> Don't forget to give the keys!
+            <DefaultForm> Take the keys back!!
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='comments'>
                         <Form.Label>Comments: </Form.Label>
                         <Form.Control></Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId='additionalPayments'>
+                        <Form.Label>Additional Payments: </Form.Label>
+                        <Form.Control type='number'></Form.Control>
                     </Form.Group>
                     <Button type='submit'> Accept</Button>
                 </Form>
@@ -53,4 +58,4 @@ class RentalForm extends Component {
 
     }
 }
-export default RentalForm
+export default ReturnForm

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import * as sdiv from '../styledDivs'
-import Employee from './Employee';
+
 
 
 class Rental extends Component {

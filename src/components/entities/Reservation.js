@@ -21,7 +21,7 @@ class Reservation extends Component {
 
 
   render() {
-    const { reservationEnd, car, reservationStart, client, id } = this.props.info
+    const { reservationEnd, car, reservationStart, client, id, carRental,carReturn } = this.props.info
     return (<sdiv.Container>
       <div>Start date: {reservationStart}</div>
       <div>End date: {reservationEnd}</div>
@@ -29,8 +29,9 @@ class Reservation extends Component {
       <ChoosenCar info={car} />
 
       {this.state.currentUser.roles[0] != 'CLIENT' ?
-        <div> <ClientFromRes info={client} /><Link to={`/rental/${id}`}>
-          Rental</Link></div> : <sdiv.ButtonD onClick={this.cancel}>Cancel</sdiv.ButtonD>}
+        <div> <ClientFromRes info={client} />{!carRental ? <Link  style ={{background:'coral',color: 'black', fontWeight:'bold'}} className="btn btn-sm btn-outline-secondary" to={`/rental/${id}`}>
+        Rental</Link>: carReturn ? <div></div>:<Link className="btn btn-sm btn-outline-secondary"  style ={{background:'blue', Color: 'black',color: 'black', fontWeight:'bold'}}to={`/returns/${id}`}>
+        Return</Link>}</div> : <sdiv.ButtonD onClick={this.cancel}>Cancel</sdiv.ButtonD>}
 
 
     </sdiv.Container>)

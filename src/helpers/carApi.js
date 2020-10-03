@@ -1,15 +1,15 @@
-import { carRentalApiUrl } from './routes'
+import { carApiUrl } from './routes'
 import * as api from './api'
 
 export const getAll = () =>
-    api.get(carRentalApiUrl())
+    api.get(carApiUrl())
 
 export const create = params =>
-    api.post(carRentalApiUrl(), { ...params })
+    api.post(carApiUrl(), { ...params })
 
-export const get = (id) => api.get(carRentalApiUrl(id))
+export const get = (id) => api.get(carApiUrl(id))
 
-export const destroy = (id) => api.destroy(carRentalApiUrl(id))
+export const destroy = (id) => api.destroy(carApiUrl(id))
 
 export const update = (id, params) =>
-    api.put(carRentalApiUrl(id), { ...params })
+    api.put(carApiUrl(id), { ...params })

@@ -47,7 +47,7 @@ class Rentals extends Component {
                 
                 <sdiv.Container>
                     {this.state.data.map(rental => <Rental
-                        info={rental} key={rental.id} destroy={this.deleteClient} update={this.updateClient} />)}</sdiv.Container>
+                        info={rental} key={rental.id} destroy={this.deleteClient}  />)}</sdiv.Container>
 
 
 
