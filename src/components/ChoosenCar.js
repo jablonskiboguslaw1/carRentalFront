@@ -2,7 +2,7 @@
  import React, { Component } from 'react';
  
 
- import * as sdiv from './styledDivs'
+ import * as sdiv from './StyledDivs'
 
 
  class ChoosenCar extends Component{

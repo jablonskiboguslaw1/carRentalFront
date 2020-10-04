@@ -1,5 +1,5 @@
-import { employeeApiUrl } from './routes'
-import * as api from './api'
+import { employeeApiUrl } from './Routes'
+import * as api from './Api'
 
 export const getAll = () =>
     api.get(employeeApiUrl())

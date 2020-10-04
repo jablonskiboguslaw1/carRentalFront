@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Client from '../components/entities/Client'
-import * as clientApi from '../helpers/clientApi'
+import * as clientApi from '../helpers/ClientApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
-import * as sdiv from '../components/styledDivs'
+import * as sdiv from '../components/StyledDivs'
 
 
 

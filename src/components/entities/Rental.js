@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import * as sdiv from '../styledDivs'
+import * as sdiv from '../StyledDivs'
 
 
 

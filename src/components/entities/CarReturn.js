@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import * as sdiv from '../styledDivs'
+import * as sdiv from '../StyledDivs'
  class CarReturn extends Component {
 
     render() {
 
 
-        const { id, employeeId, dateOfReturn, comments, additionalPayments, } = this.props.info
+        const { id, comments, additionalPayments, } = this.props.info
 
         return (
 

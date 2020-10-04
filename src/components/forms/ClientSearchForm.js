@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import * as clientApi from '../../helpers/clientApi'
+import * as clientApi from '../../helpers/ClientApi'
 import Form from 'react-bootstrap/Form'
 
 class ClientSearchForm extends Component {

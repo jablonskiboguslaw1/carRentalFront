@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { create } from '../../helpers/reservationApi'
+import { create } from '../../helpers/ReservationApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import authService from '../../services/authService';
+import authService from '../../services/AuthService';
 import ChoosenCar from '../ChoosenCar'
-import * as carApi from '../../helpers/carApi'
+import * as carApi from '../../helpers/CarApi'
 
 
 

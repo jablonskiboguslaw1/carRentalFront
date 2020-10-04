@@ -1,4 +1,4 @@
-import authHeader from '../services/authHeader'
+import authHeader from '../services/AuthHeader'
 
 
 const user = JSON.parse(localStorage.getItem('user'));

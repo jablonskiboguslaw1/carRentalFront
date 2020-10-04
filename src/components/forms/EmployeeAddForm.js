@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { create } from '../../helpers/employeeApi'
+import { create } from '../../helpers/EmployeeApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'

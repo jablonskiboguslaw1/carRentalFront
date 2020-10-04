@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Car from '../components/entities/Car'
-import * as sdiv from '../components/styledDivs'
-import * as carApi from '../helpers/carApi'
+import * as sdiv from '../components/StyledDivs'
+import * as carApi from '../helpers/CarApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
 
@@ -22,11 +22,10 @@ class Cars extends Component {
   }
 
 
-  deleteCar = async (id) => {
-    const { data } = this.state
-    await carApi.destroy(id)
-    const { index } = this.findById(id, data)
-    this.setState({ data: _.remove(index, 1, data) })
+  setStatus = async (id) => {
+    
+    await carApi.updateStatus(id)
+    
 
   }
 
@@ -42,7 +41,7 @@ class Cars extends Component {
 
         <sdiv.Header >{this.state.title}</sdiv.Header>
         <sdiv.Container>
-          {this.state.data.map(car => <Car info={car} key={car.id} destroy={this.deleteCar} update={this.updateCar} />)}</sdiv.Container>
+          {this.state.data.map(car => <Car info={car} key={car.id} setStatus={this.setStatus} update={this.updateCar} />)}</sdiv.Container>
         <Link to={`/newcar`} >Add new car</Link>
 
       </sdiv.Container>

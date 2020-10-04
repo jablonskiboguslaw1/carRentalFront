@@ -1,5 +1,5 @@
-import { clientApiUrl } from './routes'
-import * as api from './api'
+import { clientApiUrl } from './Routes'
+import * as api from './Api'
 
 export const getAll = () =>
     api.get(clientApiUrl())

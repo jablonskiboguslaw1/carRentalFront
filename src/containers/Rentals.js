@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Rental from '../components/entities/Rental'
-import * as rentalApi from '../helpers/rentalApi'
+import * as rentalApi from '../helpers/RentalApi'
 
 import * as _ from 'ramda'
-import * as sdiv from '../components/styledDivs'
+import * as sdiv from '../components/StyledDivs'
 
 
 

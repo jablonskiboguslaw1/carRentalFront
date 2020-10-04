@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import * as _ from 'ramda'
-import * as carReturnApi from '../helpers/carReturnApi'
+import * as carReturnApi from '../helpers/CarReturnApi'
 import CarReturn from '../components/entities/CarReturn'
-import * as sdiv from '../components/styledDivs'
+import * as sdiv from '../components/StyledDivs'
 
 class CarReturns extends Component {
 

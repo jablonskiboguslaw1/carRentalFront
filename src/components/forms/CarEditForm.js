@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { get, update } from '../../helpers/carApi'
+import { get, update } from '../../helpers/CarApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'

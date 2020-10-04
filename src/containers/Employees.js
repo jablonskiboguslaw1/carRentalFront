@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Employee from '../components/entities/Employee'
-import * as employeeApi from '../helpers/employeeApi'
+import * as employeeApi from '../helpers/EmployeeApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
-import * as sdiv from '../components/styledDivs'
-import AuthService from "../services/authService";
+import * as sdiv from '../components/StyledDivs'
+import AuthService from "../services/AuthService";
 
 
 class Employees extends Component {

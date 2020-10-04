@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { Switch, Route, Link, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import AuthService from "./services/authService";
+import AuthService from "./services/AuthService";
 import Login from "./services/Login";
 import ClientAddForm from "./components/forms/ClientAddForm";
 import ClientEditForm from "./components/forms/ClientEditForm";
 import Home from "./components/Home";
-import Profile from "./components/userInfo";
+import Profile from "./components/UserInfo";
 import ClientPanel from "./components/panels/ClientPanel";
-import EmployeePanel from "./components/panels/employeePanel";
-import ManagerPanel from "./components/panels/managerPanel";
+import EmployeePanel from "./components/panels/EmployeePanel";
+import ManagerPanel from "./components/panels/ManagerPanel";
 import Cars from './containers/Cars'
 import Clients from './containers/Clients'
 import CarAddForm from "./components/forms/CarAddForm";
@@ -24,6 +24,7 @@ import RentalForm from "./components/forms/RentalForm";
 import CarReturns from "./containers/CarReturns";
 import CarReturnForm from './components/forms/CarReturnForm'
 import ClientSearchForm from './components/forms/ClientSearchForm'
+import CarBlockForm from './components/forms/CarBlockForm'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -167,7 +168,7 @@ class App extends Component {
             <PrivateRoute exact path='/rental/employee/:itemId' component={Rentals}/>
             <PrivateRoute exact path='/returns' component={CarReturns}/>
             <PrivateRoute exact path='/returns/:itemId' component={CarReturnForm}/>
-           
+            <PrivateRoute exact path='/status/:itemId' component={CarBlockForm}/>
 
             <Route path="/user" component={ClientPanel} />
             <Route path="/mod" component={EmployeePanel} />

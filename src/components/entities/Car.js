@@ -2,21 +2,18 @@
  import React, { Component } from 'react';
  
  import {Link, withRouter} from 'react-router-dom'
- import * as sdiv from '../styledDivs'
+ import * as sdiv from '../StyledDivs'
 
 
  class Car extends Component{
 
    
-  delete = () => {
-    this.props.destroy(this.props.info.id)
+  setStatus = () => {
+    this.props.setStatus(this.props.info.id)
     
   }
 
-  update = () => {
-
-    this.props.update(this.props.info.id)
-  }
+  
   
   render(){
     const {mark,id,mileage,bodyType,model,payForDay,productionYear,color} = this.props.info
@@ -28,9 +25,9 @@
   <div>Cost per day: {payForDay}</div>
   <div>Production Year: {productionYear}</div>
   <div>Color: {color}</div>
-  <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>
-  <Link to={`/cars/${id}`}>edit</Link>
-  <Link to={`/reservation/${id}`}>Reservation</Link>
+  <Link className = "btn btn-danger" to={`/status/${id}` }>Change Status</Link>
+  <Link className = "btn btn-primary" to={`/cars/${id}`}>Edit</Link>
+  <Link className = "btn btn-primary" to={`/reservation/${id}`}>Reservation</Link>
   </sdiv.Container>)}}
 
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { create } from '../../helpers/rentalApi'
+import { create } from '../../helpers/RentalApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import authService from '../../services/authService'
+import authService from '../../services/AuthService'
 
 
 
