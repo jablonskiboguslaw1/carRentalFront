@@ -5,6 +5,7 @@ import car from '../../staticImages/car1.jpg'
 import ret from '../../staticImages/return.png'
 import clients from '../../staticImages/clients.jpg'
 import rental from '../../staticImages/rental.png'
+import reservation from '../../staticImages/reservaton.jpg'
 export default class ManagerPanel extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ export default class ManagerPanel extends Component {
             <div className="card mb-4 shadow-sm">
               <img src= {car} alt="car" className="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false"/>
               <div className="card-body">
-                <p className="card-text">This tile is to manage the fleet. You can add, edit or delete cars.</p>
+                <p className="card-text">Manage the fleet. Add, edit or delete cars.</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
                     <a  className="btn btn-sm btn-outline-secondary" href='/cars' >Show all</a>
@@ -62,7 +63,7 @@ export default class ManagerPanel extends Component {
                 <p className="card-text">Manage returns. <br/>Make it or cancel.</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
-                  <a  className="btn btn-sm btn-outline-secondary" href='/return' >Show all</a>
+                  <a  className="btn btn-sm btn-outline-secondary" href='/returns' >Show all</a>
                    
                   </div>
                 
@@ -103,15 +104,15 @@ export default class ManagerPanel extends Component {
           </div>
           <div className="col-md-4">
             <div className="card mb-4 shadow-sm">
-              <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src= {reservation} alt="team" className="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false"  />
               <div className="card-body">
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p className="card-text">Client's Reservations <br/></p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
-                    <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
+                  <a  className="btn btn-sm btn-outline-secondary" href='/searchclient' >Show reservations </a>
                     <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                   </div>
-                  <small className="text-muted">9 mins</small>
+                  
                 </div>
               </div>
             </div>

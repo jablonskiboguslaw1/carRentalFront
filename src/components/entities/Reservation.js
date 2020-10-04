@@ -31,7 +31,7 @@ class Reservation extends Component {
       {this.state.currentUser.roles[0] != 'CLIENT' ?
         <div> <ClientFromRes info={client} />{!carRental ? <Link  style ={{background:'coral',color: 'black', fontWeight:'bold'}} className="btn btn-sm btn-outline-secondary" to={`/rental/${id}`}>
         Rental</Link>: carReturn ? <div></div>:<Link className="btn btn-sm btn-outline-secondary"  style ={{background:'blue', Color: 'black',color: 'black', fontWeight:'bold'}}to={`/returns/${id}`}>
-        Return</Link>}</div> : <sdiv.ButtonD onClick={this.cancel}>Cancel</sdiv.ButtonD>}
+        Return</Link>}</div> : carRental ?  <div></div>:<sdiv.ButtonD onClick={this.cancel}>Cancel</sdiv.ButtonD> }
 
 
     </sdiv.Container>)

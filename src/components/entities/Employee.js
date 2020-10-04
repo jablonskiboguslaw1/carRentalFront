@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+
 import { withRouter} from 'react-router-dom'
 import * as sdiv from '../styledDivs'
 
 
-
-const EmployeeContainer = styled.div`
-background: #343744;
-border-radius: 10px;
-padding: 14px;
-margin-bottom: 7px;
-`
 
 class Employee extends Component{
 
@@ -27,7 +20,7 @@ class Employee extends Component{
  
  render(){
    const {id, name, surname, email, position, department} = this.props.info
-     return(<EmployeeContainer>
+     return(<sdiv.Container>
  <div>First Name: {name}</div>
  <div>Last Name: {surname}</div>
  <div><a className="mailto" href={"mailto:"+ email}>{email}</a></div>
@@ -35,13 +28,13 @@ class Employee extends Component{
  <div>Position: {position}</div>
  <div>Department: {department}</div>
  {id==this.props.userid ? <div> Hello!!</div>:
- <sdiv.ButtonD onClick={this.delete }>Delete</sdiv.ButtonD>}
+ <button className="btn btn-outline-danger" onClick={this.delete }>Delete</button>}
  {id==this.props.userid ? 
  <div>It's You!!</div>:
  (position==="EMPLOYEE" ?
- <sdiv.ButtonR onClick={this.update }>Grant Rights</sdiv.ButtonR> : <sdiv.ButtonR onClick={this.update }>Take the power</sdiv.ButtonR>) }
+ <button className="btn  btn-outline-primary" onClick={this.update }>Grant Rights</button> : <button  className="btn btn-outline-danger" onClick={this.update }>Take the power</button>) }
 
- </EmployeeContainer>)}}
+ </sdiv.Container>)}}
 
 
 

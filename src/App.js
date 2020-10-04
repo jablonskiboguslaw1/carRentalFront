@@ -23,6 +23,7 @@ import Rentals from './containers/Rentals'
 import RentalForm from "./components/forms/RentalForm";
 import CarReturns from "./containers/CarReturns";
 import CarReturnForm from './components/forms/CarReturnForm'
+import ClientSearchForm from './components/forms/ClientSearchForm'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -154,6 +155,7 @@ class App extends Component {
             <PrivateRoute exact path="/newcar" component={CarAddForm} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path='/cars/:itemId' component={CarEditForm} />
+            <PrivateRoute exact path='/searchclient' component={ClientSearchForm}/>
             <PrivateRoute exact path='/client/:itemId' component={ClientEditForm}  />
             <PrivateRoute exact path="/reservations" component={Reservations} />
             <PrivateRoute exact path='/reservation/client/:itemId' component={Reservations}/>
@@ -165,6 +167,8 @@ class App extends Component {
             <PrivateRoute exact path='/rental/employee/:itemId' component={Rentals}/>
             <PrivateRoute exact path='/returns' component={CarReturns}/>
             <PrivateRoute exact path='/returns/:itemId' component={CarReturnForm}/>
+           
+
             <Route path="/user" component={ClientPanel} />
             <Route path="/mod" component={EmployeePanel} />
             <Route path="/manager" component={ManagerPanel} />

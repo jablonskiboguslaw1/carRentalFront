@@ -12,7 +12,8 @@ class Reservations extends Component {
   state =
     {
       title: 'Reservations',
-      data: [],
+      dataStorage:null,
+      data: null,
 
     }
 
@@ -24,6 +25,40 @@ class Reservations extends Component {
     return { index, reservation: arr[index] }
   }
 
+refresh=()=>{
+  
+  this.setState({data : this.state.dataStorage})
+}
+
+ findInProgress= () => {
+   
+  var { data,dataStorage } = this.state
+  data=dataStorage
+ 
+ const tempData = []
+  data.map(a=>{ if (a.carRental) { if(!a.carReturn) {tempData.push(a) }}})
+  this.setState({data: tempData})
+}
+
+findNew= () => {
+  
+  var { data,dataStorage } = this.state
+  data=dataStorage
+
+  this.setState({data:_.filter(_.propEq('carRental', null), (data))})
+    
+}
+
+findClosed= () => {
+  
+  var { data,dataStorage } = this.state
+  data=dataStorage
+  const tempData = []
+  data.map(a=>{ if (a.carRental) { if(a.carReturn) {tempData.push(a) }}})
+  this.setState({data: tempData})
+    
+}
+
 
   cancelReservation = async (id) => {
     const { data } = this.state
@@ -33,11 +68,11 @@ class Reservations extends Component {
 
   }
 
-  if
+ 
   componentDidMount = async () => {
 
     const data = (!this.clientId() ? await reservationApi.getAll() : await reservationApi.getAllByClient(this.clientId()))
-    this.setState({ data: data })
+    this.setState({ data: data, dataStorage: data })
 
   }
   render() {
@@ -46,15 +81,18 @@ class Reservations extends Component {
       <sdiv.Container>
 
         <sdiv.Header >{this.state.title}</sdiv.Header>
-        <sdiv.Container>
-          { this.state.data ? (
-          this.state.data.map(
+       
+          { this.state.data ? <sdiv.Container>
+          {this.state.data.map(
             reservation =>
               <sdiv.ContainerInside key={reservation.id} >
                 <Reservation info={reservation} cancelReservation={this.cancelReservation} />
-              </sdiv.ContainerInside>)): <div></div>}
-        </sdiv.Container>
-
+              </sdiv.ContainerInside>)}
+        </sdiv.Container>: <div></div>}
+        <button onClick={this.findNew}>Reserved</button>
+        <button onClick={this.findInProgress}>On travel</button>
+        <button onClick={this.findClosed}>Closed</button>
+        <button onClick={this.refresh}>All</button>
 
       </sdiv.Container>
     )

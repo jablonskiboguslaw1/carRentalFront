@@ -9,6 +9,8 @@ export const create = params =>
 
 export const get = (id) => api.get(clientApiUrl(id))
 
+export const getByUsername=(username) => api.get(clientApiUrl()+'/username/'+username)
+
 export const destroy = (id) => api.destroy(clientApiUrl(id))
 
 export const update = (id, params) =>
