@@ -14,7 +14,8 @@ export default class Profile extends Component {
     const { currentUser } = this.state;
 
     return (
-      <div className="container"><div className="jumbotron">
+      <div className="container" style={{background: 'rgba(0,0,0,0.3)'}} >
+        <div className="jumbotron" >
         <header>
           <h3>
             <strong>{currentUser.name +" "+ currentUser.surname}</strong> Profile

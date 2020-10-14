@@ -46,7 +46,7 @@ export default class ClientEditForm extends Component {
 
     render() {
 
-        return (<DefaultForm>
+        return (<DefaultForm style={{ color: 'ivory'}}>
             Edit Data Cautiously {this.clientId()}
             {this.state.fetched
                 ? <DefaultForm>

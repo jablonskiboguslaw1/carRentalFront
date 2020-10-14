@@ -13,10 +13,10 @@ class Home extends Component {
         return (
        
             <div className="container  py-5">
-            <div className="jumbotron  text-dark jumbotron-image shadow" style={{'backgroundImage' : `url(https://www.speednik.com/wp-content/blogs.dir/1/files/2018/01/scientists-find-a-key-to-happiness-is-driving-a-fast-car-0001-640x427.jpg)`}}>
-              <h2 className="mb-4">
+            <div className="jumbotron  text-dark jumbotron-image shadow" style={{background: 'rgba(0,0,0,0.3)'}}>
+              <h2 className="mb-4" style= {{color: 'ivory'}}>
                
-                Rent Car from Your Dreams and Travel As Fast As You Like! 
+                Rent Car of Your Dreams and Travel As Fast As You Like! 
               </h2>
               <p className="mb-4">
                 Hey, check this out.

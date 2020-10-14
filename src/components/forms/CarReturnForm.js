@@ -40,7 +40,7 @@ class ReturnForm extends Component {
 
 
         return (
-            <DefaultForm> Take the keys back!!
+            <DefaultForm style={{ color: 'ivory'}}> Take the keys back!!
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='comments'>
                         <Form.Label>Comments: </Form.Label>

@@ -39,7 +39,7 @@ class RentalForm extends Component {
 
 
         return (
-            <DefaultForm> Don't forget to give the keys!
+            <DefaultForm style={{ color: 'ivory'}}> Don't forget to give the keys!
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='comments'>
                         <Form.Label>Comments: </Form.Label>

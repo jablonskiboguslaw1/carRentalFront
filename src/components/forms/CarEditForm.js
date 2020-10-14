@@ -53,7 +53,7 @@ render() {
         <DefaultForm>
             Edit Car {this.carId()}
             {this.state.fetched
-                ? <DefaultForm>
+                ? <DefaultForm style={{ color: 'ivory'}}>
                     <Form onSubmit={this.handleSubmit}>
 
                         <Form.Group controlId='mileage'>
@@ -74,7 +74,7 @@ render() {
 
 
 
-                : <p>Loading...</p>}
+                : <p>Car not found</p>}
         </DefaultForm>
     )
             }

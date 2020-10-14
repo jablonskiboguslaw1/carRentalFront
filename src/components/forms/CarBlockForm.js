@@ -66,7 +66,7 @@ class CarBlockForm extends Component {
     render() {
         const statuses = ["RENTED", "AVAILABLE", "CRUSHED", "UNAVAILABLE", "ONREVIEW", "IN_REPAIR"]
         const { dateStart, dateEnd, carItem } = this.state
-        return (<div style={{ textAlign: 'center' }}>
+        return (<div style={{ textAlign: 'center',color: 'ivory'}}>
             Edit Data Cautiously
             {this.state.fetched
                 ? <div>

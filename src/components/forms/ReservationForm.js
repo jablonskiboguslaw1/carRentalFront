@@ -68,13 +68,13 @@ updateEnd =(event)=>{
         const {dateEnd,choosenCar,dateStart} = this.state;
 
         return (
-           <div>
-            <div style={{textAlign: 'center'}}> Make Reservation</div>
+           <div style={{color: 'ivory'}}>
+            <div style={{textAlign: 'center' }}> Make Reservation</div>
                 <ChoosenCar info={choosenCar}  />
                 <DefaultForm>
                 <Form onSubmit= {this.handleSubmit} >
                         <Form.Group controlId='reservationStart'>
-                            <Form.Label>Reservation from: </Form.Label>
+                            <Form.Label>Reservation from </Form.Label>
                             <Form.Control type="date" onChange={this.updateStart}></Form.Control>
                            
                         </Form.Group>
@@ -85,7 +85,7 @@ updateEnd =(event)=>{
                         {dateEnd>=dateStart ?
                        <div> <Button type='submit'>Accept</Button>
                        {Number.isNaN(this.calculateCost()) ? 
-                       <div></div>:<div>Approximate cost: {this.calculateCost()}</div>}</div> : <div> Second date must be after first</div>}
+                       <div></div>:<div>Approximate cost: {this.calculateCost()}$</div>}</div> : <div> Second date must be after first</div>}
                     </Form>
                 </DefaultForm>
             </div>

@@ -42,7 +42,7 @@ class ClientAddForm extends Component {
 
 
         return (
-            <DefaultForm> Put Yours necessary data to start adventure!
+            <DefaultForm style={{ color: 'ivory'}}> Put Yours necessary data to start adventure!
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='email'>
                         <Form.Label>Email: </Form.Label>

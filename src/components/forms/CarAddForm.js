@@ -37,10 +37,10 @@ class CarAddForm extends Component {
     }
 
     render() {
-
+     
 
         return (
-            <DefaultForm> Add car to fleet
+            <DefaultForm style={{ color: 'ivory'}}> Add car to fleet
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Group controlId='mark'>
                         <Form.Label>Mark: </Form.Label>

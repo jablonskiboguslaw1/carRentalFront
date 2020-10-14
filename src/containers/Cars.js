@@ -37,14 +37,16 @@ class Cars extends Component {
   render() {
     return (
 
-      <sdiv.Container>
+      <div>
 
         <sdiv.Header >{this.state.title}</sdiv.Header>
         <sdiv.Container>
           {this.state.data.map(car => <Car info={car} key={car.id} setStatus={this.setStatus} update={this.updateCar} />)}</sdiv.Container>
+        
+        
         <Link to={`/newcar`} >Add new car</Link>
 
-      </sdiv.Container>
+      </div>
     )
   }
 }

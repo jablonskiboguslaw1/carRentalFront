@@ -3,6 +3,7 @@ import { create } from '../../helpers/EmployeeApi'
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import * as departmentApi from '../../helpers/DepartmentApi'
 
 
 
@@ -17,6 +18,12 @@ max-width: 320px;
 class EmployeeAddForm extends Component {
 
 
+    state ={
+
+        departments:[]
+    }
+
+
     createEmployee = async (event) => {
         await create({
             name: event.target.name.value,
@@ -28,7 +35,16 @@ class EmployeeAddForm extends Component {
         })
 
     }
+componentDidMount=async()=>{
+    const deps = await departmentApi.getAll()
+this.setState({departments: deps})
 
+
+
+
+
+}
+    
     handleSubmit = (event) => {
         event.preventDefault();
         this.createEmployee(event)
@@ -40,8 +56,10 @@ class EmployeeAddForm extends Component {
 
 
         return (
-            <DefaultForm> Register new member of our team
+            
+            <DefaultForm style={{ color: 'ivory'}}> Register new member of our team
                 <Form onSubmit={this.handleSubmit} >
+                    {console.log(this.state.departments)}
                     <Form.Group controlId='email'>
                         <Form.Label>Email: </Form.Label>
                         <Form.Control></Form.Control>
@@ -68,11 +86,9 @@ class EmployeeAddForm extends Component {
                     <Form.Group controlId="department">
                         <Form.Label>Department</Form.Label>
                         <Form.Control as="select">
-                            <option>Oddział w Gdyni</option>
-                            <option>Department 2</option>
-                            <option>Department 3</option>
-                            <option>Department 4</option>
-                            <option>Department 5</option>
+        {this.state.departments.map((dep) => {return <option>{dep.name}</option>})}
+       
+       
                         </Form.Control>
                     </Form.Group>
                     <Button type='submit'> Register</Button>
