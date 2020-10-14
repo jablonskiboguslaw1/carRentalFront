@@ -62,13 +62,13 @@ export default class Login extends Component {
           const resMessage =
             (error.response &&
               error.response.data &&
-              error.response.data.message) ||
+              error.response.data.message)+' Wrong email or password' ||
             error.message ||
             error.toString();
 
           this.setState({
             loading: false,
-            message: resMessage
+            message: resMessage 
           });
         }
       );
