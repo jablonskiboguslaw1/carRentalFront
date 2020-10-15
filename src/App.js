@@ -24,7 +24,7 @@ import CarReturns from "./containers/CarReturns";
 import CarReturnForm from './components/forms/CarReturnForm'
 import ClientSearchForm from './components/forms/ClientSearchForm'
 import CarBlockForm from './components/forms/CarBlockForm'
-
+import NotFound from './helpers/NotFound'
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -164,10 +164,9 @@ class App extends Component {
             <PrivateRoute exact path='/returns' component={CarReturns}/>
             <PrivateRoute exact path='/returns/:itemId' component={CarReturnForm}/>
             <PrivateRoute exact path='/status/:itemId' component={CarBlockForm}/>
-
-            <Route path="/client" component={ClientPanel} />
-            <Route path="/employee" component={EmployeePanel} />
-            
+            <PrivateRoute exact path="/client" component={ClientPanel} />
+            <PrivateRoute exact path="/employee" component={EmployeePanel} />
+            <Route path={"/*"} component={NotFound} />
           </Switch>
         </div>
       </div>
