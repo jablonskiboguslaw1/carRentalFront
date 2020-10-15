@@ -60,6 +60,7 @@ class CarBlockForm extends Component {
         event.preventDefault();
         this.updateCar(event)
         this.props.history.push('/cars')
+        window.location.reload();
 
     }
 

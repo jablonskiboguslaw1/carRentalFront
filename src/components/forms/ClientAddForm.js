@@ -35,7 +35,7 @@ class ClientAddForm extends Component {
         event.preventDefault();
         this.createClient(event)
         this.props.history.push(`/client`)
-    
+        window.location.reload();
     }
 
     render() {

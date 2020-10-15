@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as clientApi from '../../helpers/ClientApi'
 import Form from 'react-bootstrap/Form'
-import Select from 'react-dropdown-select';
+
 
 class ClientSearchForm extends Component {
 
@@ -19,7 +19,7 @@ componentDidMount=async()=>{
         event.preventDefault();
         const user = await clientApi.getByUsername(event.target.username.value)
         this.props.history.push('/reservation/client/' + user.id)
-
+        window.location.reload();
     }
 
 

@@ -32,7 +32,7 @@ class RentalForm extends Component {
         event.preventDefault();
         this.createRental(event)
         this.props.history.push('/reservations')
-    
+        window.location.reload();
     }
 
     render() {

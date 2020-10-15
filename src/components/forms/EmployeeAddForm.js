@@ -49,7 +49,7 @@ this.setState({departments: deps})
         event.preventDefault();
         this.createEmployee(event)
         this.props.history.push(`/team`)
-
+        window.location.reload();
     }
 
     render() {

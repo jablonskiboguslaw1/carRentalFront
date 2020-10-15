@@ -45,12 +45,13 @@ handleSubmit = (event) => {
     event.preventDefault();
     this.updateCar(event)
     this.props.history.push('/cars')
+    window.location.reload();
 
 }
 
 render() {
     return (
-        <DefaultForm>
+        <DefaultForm style={{color: 'ivory'}}>
             Edit Car {this.carId()}
             {this.state.fetched
                 ? <DefaultForm style={{ color: 'ivory'}}>
@@ -68,7 +69,7 @@ render() {
                             <Form.Label>Pay for day: </Form.Label>
                             <Form.Control defaultValue={this.state.carItem.payForDay} ></Form.Control>
                         </Form.Group>
-                        <Button type='submit'> Edit</Button>
+                        <Button type='submit'> Submit Changes</Button>
                     </Form>
                 </DefaultForm>
 

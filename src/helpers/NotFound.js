@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import accessDenied from '../staticImages/accessDenied'
 
 
 class NotFound extends Component {
@@ -7,6 +8,7 @@ class NotFound extends Component {
         return (
             <div>
                 <p>No match for <code>{this.props.location.pathname}</code></p>
+                <div>{accessDenied}</div>
             </div>
         )
     }

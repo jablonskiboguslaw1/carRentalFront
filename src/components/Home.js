@@ -21,7 +21,7 @@ class Home extends Component {
               <p className="mb-4">
                 Hey, check this out.
               </p>
-              <a href="http://localhost:3000/login" className="btn btn-primary">Start Your Travels</a>
+              <a href="http://localhost:3000/login" className="btn btn-primary">Start Your Travel</a>
             </div>
             
           </div>

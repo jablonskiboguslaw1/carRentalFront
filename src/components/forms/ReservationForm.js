@@ -60,7 +60,7 @@ updateEnd =(event)=>{
         event.preventDefault();
         this.createReservation(event)
         this.props.history.push(`client/`+ authService.getCurrentUser().id)
-
+        window.location.reload();
     }
    
     

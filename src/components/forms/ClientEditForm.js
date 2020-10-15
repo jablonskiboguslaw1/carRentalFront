@@ -42,6 +42,7 @@ export default class ClientEditForm extends Component {
         event.preventDefault();
         this.updateClient(event)
         this.props.history.push('/client')
+        window.location.reload();
     }
 
     render() {

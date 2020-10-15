@@ -2,10 +2,16 @@
  import React, { Component } from 'react';
  
  import {Link, withRouter} from 'react-router-dom'
+import AuthService from '../../services/AuthService';
  import * as sdiv from '../StyledDivs'
 
 
  class Car extends Component{
+
+
+  state={
+    currentUser : AuthService.getCurrentUser()
+  }
 
    
   setStatus = () => {
@@ -25,9 +31,10 @@
   <div>Cost per day: {payForDay}</div>
   <div>Production Year: {productionYear}</div>
   <div>Color: {color}</div>
+  {(this.state.currentUser.roles[0]=='CLIENT') ? <Link className = "btn btn-primary" to={`/reservation/${id}`}>Reservation</Link> :<div>
   <Link className = "btn btn-danger" to={`/status/${id}` }>Change Status</Link>
-  <Link className = "btn btn-primary" to={`/cars/${id}`}>Edit</Link>
-  <Link className = "btn btn-primary" to={`/reservation/${id}`}>Reservation</Link>
+  <Link className = "btn btn-primary" to={`/cars/${id}`}>Edit</Link></div>
+      }
   </sdiv.Container>)}}
 
 

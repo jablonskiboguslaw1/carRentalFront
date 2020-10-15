@@ -7,10 +7,9 @@ import Login from "./services/Login";
 import ClientAddForm from "./components/forms/ClientAddForm";
 import ClientEditForm from "./components/forms/ClientEditForm";
 import Home from "./components/Home";
-import Profile from "./components/UserInfo";
+import Profile from "./components/Profile";
 import ClientPanel from "./components/panels/ClientPanel";
 import EmployeePanel from "./components/panels/EmployeePanel";
-import ManagerPanel from "./components/panels/ManagerPanel";
 import Cars from './containers/Cars'
 import Clients from './containers/Clients'
 import CarAddForm from "./components/forms/CarAddForm";
@@ -83,17 +82,13 @@ class App extends Component {
             Fire On Pistons
           </Link>
           <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                START
-              </Link>
-            </li>
+           
 
 
 
             {showEmployeePanel && (
               <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
+                <Link to={"/employee"} className="nav-link">
                   Employee Panel
                 </Link>
               </li>
@@ -101,7 +96,7 @@ class App extends Component {
 
             {showManagerPanel && (
               <li className="nav-item">
-                <Link to={"/manager"} className="nav-link">
+                <Link to={"/employee"} className="nav-link">
                   Manager Panel
                 </Link>
               </li>
@@ -109,7 +104,7 @@ class App extends Component {
 
             {showClientPanel && (
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
+                <Link to={"/client"} className="nav-link">
                   Client Panel
                 </Link>
               </li>
@@ -170,9 +165,9 @@ class App extends Component {
             <PrivateRoute exact path='/returns/:itemId' component={CarReturnForm}/>
             <PrivateRoute exact path='/status/:itemId' component={CarBlockForm}/>
 
-            <Route path="/user" component={ClientPanel} />
-            <Route path="/mod" component={EmployeePanel} />
-            <Route path="/manager" component={ManagerPanel} />
+            <Route path="/client" component={ClientPanel} />
+            <Route path="/employee" component={EmployeePanel} />
+            
           </Switch>
         </div>
       </div>

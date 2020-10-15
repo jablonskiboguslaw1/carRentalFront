@@ -33,7 +33,7 @@ class ReturnForm extends Component {
         event.preventDefault();
         this.createReturn(event)
         this.props.history.push('/reservations/summary/'+this.reservationId())
-    
+        window.location.reload();
     }
 
     render() {

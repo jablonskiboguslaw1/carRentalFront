@@ -4,6 +4,7 @@ import * as sdiv from '../components/StyledDivs'
 import * as carApi from '../helpers/CarApi'
 import { Link } from 'react-router-dom'
 import * as _ from 'ramda'
+import AuthService from '../services/AuthService'
 
 
 
@@ -13,7 +14,8 @@ class Cars extends Component {
   state =
     {
       title: 'Cars',
-      data: []
+      data: [],
+      currentUser: AuthService.getCurrentUser()
     }
 
   findById = (id, arr) => {
@@ -43,8 +45,8 @@ class Cars extends Component {
         <sdiv.Container>
           {this.state.data.map(car => <Car info={car} key={car.id} setStatus={this.setStatus} update={this.updateCar} />)}</sdiv.Container>
         
-        
-        <Link to={`/newcar`} >Add new car</Link>
+        {this.state.currentUser.roles[0]!='CLIENT' ?
+        <Link to={`/newcar`} className='btn btn-secondary' >Add new car</Link> :<div></div>}
 
       </div>
     )

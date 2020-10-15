@@ -25,7 +25,8 @@ class CarAddForm extends Component {
             mileage: event.target.mileage.value,
             productionYear: event.target.productionYear.value,
             color: event.target.color.value,
-            bodyType: event.target.bodyType.value
+            bodyType: event.target.bodyType.value,
+            payForDay: event.target.payForDay.value
         })
     }
 
@@ -33,6 +34,7 @@ class CarAddForm extends Component {
         event.preventDefault();
         this.createCar(event)
         this.props.history.push('/cars')
+        window.location.reload();
     
     }
 
@@ -58,6 +60,10 @@ class CarAddForm extends Component {
                         <Form.Label>Mileage: </Form.Label>
                         <Form.Control></Form.Control>
                     </Form.Group>
+                    <Form.Group controlId='payForDay'>
+                        <Form.Label>Daily cost: </Form.Label>
+                        <Form.Control></Form.Control>
+                    </Form.Group>
                     <Form.Group controlId='color'>
                         <Form.Label>Color: </Form.Label>
                         <Form.Control ></Form.Control>
@@ -66,7 +72,7 @@ class CarAddForm extends Component {
                         <Form.Label>Production year: </Form.Label>
                         <Form.Control ></Form.Control>
                     </Form.Group>
-                    <Button type='submit'> add</Button>
+                    <Button type='submit'>Submit</Button>
                 </Form>
             </DefaultForm>
         )
