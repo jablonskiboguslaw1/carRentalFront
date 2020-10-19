@@ -1,4 +1,4 @@
-const serverURL = 'http://localhost:8081'
+const serverURL = 'http://46.41.140.5:8082'
 
 
 export const carApiUrl = id => id ? `${serverURL}/cars/${id}` : `${serverURL}/cars`
