@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://46.41.140.5:8082/login";
+const API_URL = "https://boguslawjablonski.xyz:8443/login";
 
 
 class AuthService {

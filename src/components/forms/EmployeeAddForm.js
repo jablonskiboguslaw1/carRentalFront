@@ -33,6 +33,7 @@ class EmployeeAddForm extends Component {
             department: event.target.department.value,
             position: event.target.position.value
         })
+        console.log(event)
 
     }
 componentDidMount=async()=>{
@@ -86,7 +87,7 @@ this.setState({departments: deps})
                     <Form.Group controlId="department">
                         <Form.Label>Department</Form.Label>
                         <Form.Control as="select">
-        {this.state.departments.map((dep) => {return <option>{dep.name}</option>})}
+        {this.state.departments.map((dep) =>  <option key ={dep.id}>{dep.name}</option>)}
        
        
                         </Form.Control>

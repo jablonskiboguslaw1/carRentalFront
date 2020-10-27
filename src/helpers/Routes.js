@@ -1,6 +1,6 @@
-const serverURL = 'http://46.41.140.5:8082'
 
 
+const serverURL = 'https://boguslawjablonski.xyz:8443'
 export const carApiUrl = id => id ? `${serverURL}/cars/${id}` : `${serverURL}/cars`
 export const clientApiUrl = id => id ? `${serverURL}/client/${id}` : `${serverURL}/client`
 export const employeeApiUrl = id => id ? `${serverURL}/employee/${id}` : `${serverURL}/employee`
